@@ -1,0 +1,209 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>♡ WISHBONE DREAM CLUB ♡</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="grain"></div>
+  <div id="sky"></div>
+
+  <header class="site-header">
+    <div class="mini-brand">✦ WISHBONE DREAM CLUB ✦</div>
+    <div class="live">● DREAMING LIVE</div>
+  </header>
+
+  <nav class="wish-nav">
+    <button onclick="scrollToId('home')">HOME ♡</button>
+    <button onclick="scrollToId('shrine')">SHRINE ✦</button>
+    <button onclick="scrollToId('trinkets')">TRINKETS ☆</button>
+    <button onclick="scrollToId('guestbook')">GUESTBOOK</button>
+    <button onclick="summonChaos()">☁ CHAOS</button>
+  </nav>
+
+  <main id="home">
+
+    <section class="hero-card">
+      <div class="cloud cloud-a">☁</div>
+      <div class="cloud cloud-b">☁</div>
+      <div class="moon">☾</div>
+      <div class="hero-sparkles">✦　✧　⋆　♡　✦　✧</div>
+
+      <p class="eyebrow">WELCOME TO MY LITTLE WISH SPACE</p>
+
+      <h1>
+        WISH<br>
+        UPON<br>
+        EVERYTHING
+      </h1>
+
+      <div class="hero-ribbon">a tiny dreamy internet shrine for pretty little things ♡</div>
+
+      <div class="hero-actions">
+        <button class="big-button" onclick="makeWish()">♡ MAKE A WISH ♡</button>
+        <button class="glass-button" onclick="openOracle()">✧ ASK THE STARS</button>
+      </div>
+
+      <div class="wish-counter">
+        <span>WISHES COLLECTED</span>
+        <strong id="wishCount">000</strong>
+      </div>
+    </section>
+
+    <section class="ticker">
+      <div>
+        ✦ KEEP DREAMING ✦ COLLECT LITTLE THINGS ✦ DRINK SOMETHING COLD ✦
+        MAKE A WISH ✦ LOOK AT THE MOON ✦ BE SILLY ✦ KEEP DREAMING ✦
+      </div>
+    </section>
+
+    <section id="shrine" class="section-block">
+      <div class="section-title">
+        <span>✿</span>
+        <h2>THE LITTLE SHRINE</h2>
+        <span>✿</span>
+      </div>
+
+      <div class="shrine-grid">
+        <article class="polaroid tilt-left" onclick="tapItem(this, 'pretty flower')">
+          <div class="photo flower-photo">🌷</div>
+          <b>tiny flower</b>
+          <small>found in a dream</small>
+        </article>
+
+        <article class="polaroid tilt-right" onclick="tapItem(this, 'blue star')">
+          <div class="photo blue-photo">★</div>
+          <b>blue star</b>
+          <small>for lucky days</small>
+        </article>
+
+        <article class="polaroid" onclick="tapItem(this, 'little bunny')">
+          <div class="photo bunny-photo">🐇</div>
+          <b>soft bunny</b>
+          <small>do not disturb</small>
+        </article>
+
+        <article class="polaroid tilt-right" onclick="tapItem(this, 'heart charm')">
+          <div class="photo heart-photo">♡</div>
+          <b>heart charm</b>
+          <small>extremely precious</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="wish-machine">
+      <div class="machine-top">✦ THE WISH MACHINE ✦</div>
+
+      <div class="machine-body">
+        <div class="machine-orb" id="orb" onclick="chargeOrb()">✧</div>
+
+        <div class="machine-copy">
+          <span>INSERT A LITTLE DREAM</span>
+          <h2 id="wishText">something nice will happen.</h2>
+          <button onclick="makeWish()">PULL THE RIBBON</button>
+        </div>
+
+        <div class="ribbon">
+          <span></span><span></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="trinkets" class="section-block">
+      <div class="section-title">
+        <span>☆</span>
+        <h2>TRINKET TABLE</h2>
+        <span>☆</span>
+      </div>
+
+      <div class="trinket-table">
+        <button class="trinket t1" onclick="collectTrinket(this)">🧸</button>
+        <button class="trinket t2" onclick="collectTrinket(this)">🫧</button>
+        <button class="trinket t3" onclick="collectTrinket(this)">⭐</button>
+        <button class="trinket t4" onclick="collectTrinket(this)">🎀</button>
+        <button class="trinket t5" onclick="collectTrinket(this)">🍓</button>
+        <button class="trinket t6" onclick="collectTrinket(this)">🪽</button>
+        <button class="trinket t7" onclick="collectTrinket(this)">🌙</button>
+        <button class="trinket t8" onclick="collectTrinket(this)">💎</button>
+        <button class="trinket t9" onclick="collectTrinket(this)">🌸</button>
+        <button class="trinket t10" onclick="collectTrinket(this)">🦢</button>
+        <button class="trinket t11" onclick="collectTrinket(this)">🪞</button>
+        <button class="trinket t12" onclick="collectTrinket(this)">🍬</button>
+      </div>
+    </section>
+
+    <section class="dream-room">
+      <div class="room-window">
+        <div class="window-bar">
+          <span>♡ dream_room.exe</span>
+          <button onclick="closeDream()">×</button>
+        </div>
+        <div class="window-content">
+          <div class="bed">🛏️</div>
+          <div class="lamp">🪔</div>
+          <div class="plant">🪴</div>
+          <div class="room-note">you are safe here ♡</div>
+        </div>
+      </div>
+
+      <div class="room-stickers">
+        <span class="sticker s1">ANGEL ENERGY</span>
+        <span class="sticker s2">♡ SOFT THINGS ♡</span>
+        <span class="sticker s3">NO BAD VIBES</span>
+        <span class="sticker s4">★ DREAM BIG ★</span>
+      </div>
+    </section>
+
+    <section class="fortune">
+      <div class="fortune-card">
+        <span class="tiny-label">TODAY'S TINY FORTUNE</span>
+        <p id="fortuneText">click the crystal and receive a mysterious little message.</p>
+        <button onclick="fortune()">🔮 REVEAL</button>
+      </div>
+    </section>
+
+    <section id="guestbook" class="guestbook">
+      <div class="guestbook-paper">
+        <div class="paper-tape">♡</div>
+        <h2>MY TINY GUESTBOOK</h2>
+        <p>leave a little mark on the page.</p>
+
+        <div class="guest-row">
+          <input id="guestInput" maxlength="42" placeholder="write something cute...">
+          <button onclick="signGuestbook()">SIGN</button>
+        </div>
+
+        <div id="guestEntries" class="guest-entries">
+          <div>♡ hello from the dream club ♡</div>
+          <div>✦ someone left glitter here ✦</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-banner">
+      <div class="rainbow">🌈</div>
+      <h2>THANK YOU FOR VISITING ♡</h2>
+      <p>take a little sparkle with you.</p>
+      <button onclick="goodbyeSparkles()">✦ SEND ME HOME ✦</button>
+    </section>
+
+  </main>
+
+  <button class="music-pill" onclick="toggleMusic()" id="musicBtn">♫ DREAM RADIO: OFF</button>
+  <button class="chaos-pill" onclick="summonChaos()">💥 MAKE IT MESSY</button>
+
+  <div id="oracle" class="modal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeOracle()">×</button>
+      <div class="oracle-star">✦</div>
+      <h2>THE STARS SAY...</h2>
+      <p id="oracleText">you will find something beautiful in an unexpected place.</p>
+      <button onclick="newOracle()">ASK AGAIN</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast">♡ sparkle acquired ♡</div>
+
+  <script src="script.js"></script>
+</body>
